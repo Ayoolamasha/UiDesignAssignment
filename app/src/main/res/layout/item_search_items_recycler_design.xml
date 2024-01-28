@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="searchItems"
+            type="com.ayoolamasha.uidesignassignment.data.SearchData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_10">
+
+        <ImageView
+            android:layout_width="@dimen/width_30"
+            android:layout_height="@dimen/height_30"
+            android:src="@drawable/sender_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guidelineImageEnd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/itemInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.1"
+            app:layout_constraintStart_toEndOf="@id/guidelineImageEnd"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/Widget.TextView.BodyRegular14"
+                android:textColor="@color/body_text_color"
+                android:text="@{searchItems.searchItemName}"
+                tools:text="Macbook pro M2" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/Widget.TextView.BodyMedium16"
+                    android:layout_width="wrap_content"
+                    tools:text="@string/shipment_number_fig"
+                    android:text="@{searchItems.searchItemShipmentCode}"
+                    android:textColor="@color/search_text_color"
+                    android:textSize="@dimen/caption_text_size_12" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_3"
+                    android:src="@drawable/dot_grey" />
+
+                <TextView
+                    style="@style/Widget.TextView.BodyMedium16"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/margin_3"
+                    android:text="@{searchItems.searchItemSenderLocation}"
+                    android:textColor="@color/search_text_color"
+                    android:textSize="@dimen/caption_text_size_12"
+                    tools:text="Paris" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_3"
+                    android:src="@drawable/arrow_forward" />
+
+                <TextView
+                    style="@style/Widget.TextView.BodyMedium16"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/margin_3"
+                    android:text="@{searchItems.searchItemReceiverLocation}"
+                    android:textColor="@color/search_text_color"
+                    android:textSize="@dimen/caption_text_size_12"
+                    tools:text="Morocco" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="@dimen/width_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            app:layout_constraintTop_toBottomOf="@id/itemInfo"
+            app:layout_constraintStart_toEndOf="@id/guidelineCardStart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineCardStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineImageEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.12" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

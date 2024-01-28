@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shipmentDetails"
+            type="com.ayoolamasha.uidesignassignment.data.ShipmentData" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/radius_10"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/guidelineCardStart"
+                app:layout_constraintEnd_toStartOf="@id/guidelineCardMiddle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <LinearLayout
+                    android:id="@+id/progressLinear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shipment_status_background"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:paddingStart="@dimen/padding_15"
+                    android:paddingEnd="@dimen/padding_15"
+                    android:paddingTop="@dimen/padding_3"
+                    android:paddingBottom="@dimen/padding_3"
+
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:loadImage="@{shipmentDetails.shipmentStatusIcon}"
+                        tools:src="@drawable/progress"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        style="@style/Widget.TextView.BodyMedium16"
+                        android:textSize="@dimen/caption_text_size_12"
+                        android:text="@{shipmentDetails.shipmentStatus}"
+                        tools:text="@string/in_progress"
+                        tools:textColor="@color/green_ish"
+                        />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    style="@style/Widget.TextView.BodyMedium16"
+                    android:textSize="@dimen/subtitle_text_size_14"
+                    android:text="@{shipmentDetails.shipmentHeader}"
+                    tools:text="@string/arriving_today"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/margin_10"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/Widget.TextView.BodyMedium16"
+                    android:text="@{shipmentDetails.shipmentHeaderSub}"
+                    android:textSize="@dimen/caption_text_size_12"
+                    tools:text="@string/arriving_today_details"
+                    android:textColor="@color/caption_text_color"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        style="@style/Widget.TextView.BodyMedium16"
+                        android:textSize="@dimen/caption_text_size_12"
+                        android:text="@{shipmentDetails.shipmentAmount}"
+                        tools:text="@string/fourteen_usd"
+                        android:textColor="@color/color_primary"
+                        android:textStyle="bold"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_5">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/dot_grey"
+                            android:layout_gravity="center_vertical"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            style="@style/Widget.TextView.BodyMedium16"
+                            android:text="@{shipmentDetails.shipmentDate}"
+                            android:textSize="@dimen/caption_text_size_12"
+                            tools:text="Sep 20, 2023"
+                            android:textColor="@color/search_text_color"
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/margin_3"
+                            />
+
+                    </LinearLayout>
+
+
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/box_shadow"
+                app:layout_constraintStart_toEndOf="@id/guidelineCardMiddle"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCardStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05"  />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCardMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.65"  />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

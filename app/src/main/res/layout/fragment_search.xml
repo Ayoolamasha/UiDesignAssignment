@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_background">
+
+        <!-- APP BAR LAYOUT START -->
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/topInfoDash"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineAppBarEnd"
+                    app:layout_constraintStart_toEndOf="@id/guidelineAppBarStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.2">
+
+                    <ImageView
+                        android:id="@+id/backArrow"
+                        android:layout_width="@dimen/width_30"
+                        android:layout_height="@dimen/height_30"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        android:src="@drawable/arrow_back"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/guidelineTopAppBarImageEnd"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+
+                    <LinearLayout
+                        android:id="@+id/searchBarConstraint"
+                        style="@style/Widget.SearchBarBgSearch"
+                        android:orientation="horizontal"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@id/backArrow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <ImageView
+                            android:id="@+id/searchIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/search_icon"
+                            android:layout_gravity="center_vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/guidelineStarBarAppBarImageEnd"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@id/guidelineStarBarAppBarImageStart"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5" />
+
+
+                        <EditText
+                            android:id="@+id/searchText"
+                            android:layout_width="0dp"
+                            style="@style/Widget.EditText.SearchText"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:hint="@string/enter_receipt_number"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.03"
+                            app:layout_constraintStart_toEndOf="@id/guidelineStarBarAppBarImageEnd"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/search_icon_oval_background"
+                            android:padding="@dimen/padding_5"
+                            android:layout_gravity="center_vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.99"
+                            app:layout_constraintStart_toEndOf="@id/searchText"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.5">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/mdi_flip_vertical" />
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineStarBarAppBarImageStart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.02" />
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guidelineStarBarAppBarImageEnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.1" />
+
+                    </LinearLayout>
+
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineTopAppBarImageEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.15" />
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineTopAppBarEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineAppBarStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="21dp" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineAppBarEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- APP BAR LAYOUT END -->
+
+        <!-- RECYCLER VIEW START -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/destinationCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/radius_10"
+            android:layout_marginTop="@dimen/margin_20"
+            app:layout_constraintVertical_bias="0.05"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/searchRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_search_items_recycler_design" />
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineCardStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05"  />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineCardEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- RECYCLER VIEW END -->
+
+
+
+        <!--- MAIN GUIDELINE -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@integer/guidelineStart" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

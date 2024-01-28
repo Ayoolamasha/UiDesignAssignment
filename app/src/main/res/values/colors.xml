@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="color_primary">#4a3392</color>
+    <color name="color_primary_two">#706588</color>
+    <color name="color_secondary">#F37118</color>
+    <color name="color_secondary_opacity">#c89263</color>
+    <color name="body_text_color">#232a3b</color>
+    <color name="body_text_color_two">#d6d6d6</color>
+    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_background">#f9f9f9</color>
+    <color name="white_body_two">#fdfffd</color>
+    <color name="orange_color_opacity_25">#40F37118</color>
+    <color name="input_field_color">#f7f7f7</color>
+    <color name="input_field_hint_color">#e2e2e4</color>
+    <color name="input_field_icon_color">#E8E9EC</color>
+    <color name="input_field_icon_color_two">#bbbbbb</color>
+    <color name="color_grey">#63728C</color>
+    <color name="transparent_white">#E4E3E9</color>
+    <color name="transparent">#0D000000</color>
+    <color name="transparent_darker">#A6000000</color>
+    <color name="transparent_darker_70">#B3000000</color>
+    <color name="transparent_drop_shadow">#1A000000</color>
+    <color name="red">#EA1303</color>
+    <color name="dashboard_icon_background">#fee3d0</color>
+    <color name="dashboard_icon_background_two">#cdeed8</color>
+    <color name="chip_background_color_one">#f5f4f4</color>
+    <color name="chip_background_color_two">#f4f4f4</color>
+    <color name="green_ish">#8fddba</color>
+    <color name="green">#44bf2f</color>
+    <color name="orange_ish">#efc7a4</color>
+    <color name="blue_ish">#b4dafb</color>
+    <color name="purple_ish">#706588</color>
+    <color name="app_bar_icon_text_color">#d2c6e0</color>
+    <color name="search_text_color">#bfbfbf</color>
+    <color name="caption_text_color">#b2b2b2</color>
+    <color name="box_color">#f4f9fc</color>
 </resources>

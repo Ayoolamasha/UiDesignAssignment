@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="availableVehicles"
+            type="com.ayoolamasha.uidesignassignment.data.AvailableVehiclesData" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/radius_10"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_15">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/width_100"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/logisticsTitle"
+                style="@style/Widget.TextView.BodyRegular14"
+                android:textSize="@dimen/subtitle_text_size_14_dp"
+                android:text="@{availableVehicles.freightType}"
+                tools:text="Ocean freight"
+                app:layout_constrainedWidth="true"
+                android:layout_marginStart="@dimen/margin_5"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.05"
+                app:layout_constraintStart_toEndOf="@id/guidelineCardStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/logisticsSub"
+                style="@style/Widget.TextView.CaptionRegular12"
+                android:textColor="@color/caption_text_color"
+                android:text="@{availableVehicles.freightSub}"
+                tools:text="International"
+                android:textSize="@dimen/caption_text_size_12_dp"
+                app:layout_constrainedWidth="true"
+                android:layout_marginStart="@dimen/margin_5"
+                app:layout_constraintVertical_bias="0.00"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/guidelineCardStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logisticsTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_100"
+                android:scaleType="fitXY"
+                android:layout_marginStart="@dimen/margin_5"
+                app:loadImage="@{availableVehicles.freightImage}"
+                tools:src="@drawable/train_feright"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/guidelineCardStart"
+                app:layout_constraintTop_toBottomOf="@id/logisticsSub"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCardStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05"  />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- APP BAR LAYOUT START -->
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_primary"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/topInfoDash"
+                    android:layout_width="@dimen/width_0"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    app:layout_constraintVertical_bias="0.2"
+                    app:layout_constraintStart_toEndOf="@id/guidelineAppBarStart"
+                    app:layout_constraintEnd_toStartOf="@id/guidelineAppBarEnd"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="@dimen/width_30"
+                        android:layout_height="@dimen/height_30"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        android:src="@drawable/arrow_back"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/guidelineTopAppBarImageEnd"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        style="@style/Widget.TextView.BodyMedium16"
+                        android:text="@string/shipment_history"
+                        android:textColor="@color/app_bar_icon_text_color"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineTopAppBarImageEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.10" />
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineTopAppBarEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    app:tabIndicatorColor="@color/color_secondary"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextColor="@color/color_primary_two"
+                    app:tabIndicatorAnimationMode="linear"
+                    app:tabMode="scrollable"
+                    app:layout_constraintVertical_bias="0.1"
+                    app:layout_constraintTop_toBottomOf="@id/topInfoDash"
+                    app:layout_constraintStart_toEndOf="@id/guidelineAppBarStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineAppBarStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="21dp" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineAppBarEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- APP BAR LAYOUT END -->
+        
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+
+        <!--- MAIN GUIDELINE -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@integer/guidelineStart" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
