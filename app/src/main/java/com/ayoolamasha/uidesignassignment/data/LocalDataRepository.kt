@@ -183,31 +183,31 @@ object LocalDataRepository {
             AvailableVehiclesData(
                 freightType = R.string.freight_type_1,
                 freightSub = R.string.freight_type_1 ,
-                freightImage = R.drawable.train_feright,
+                freightImage = R.drawable.ocean_freight,
             ),
 
             AvailableVehiclesData(
                 freightType = R.string.freight_type_2,
                 freightSub = R.string.freight_type_2 ,
-                freightImage = R.drawable.delivery_truck,
+                freightImage = R.drawable.road_freight,
             ),
 
             AvailableVehiclesData(
                 freightType = R.string.freight_type_3,
                 freightSub = R.string.freight_type_3 ,
-                freightImage = R.drawable.train_feright,
+                freightImage = R.drawable.air_freight,
             ),
 
             AvailableVehiclesData(
                 freightType = R.string.freight_type_4,
                 freightSub = R.string.freight_type_4 ,
-                freightImage = R.drawable.delivery_truck,
+                freightImage = R.drawable.train_feright,
             ),
 
             AvailableVehiclesData(
                 freightType = R.string.freight_type_5,
                 freightSub = R.string.freight_type_5 ,
-                freightImage = R.drawable.delivery_truck,
+                freightImage = R.drawable.drone_freight,
             ),
 
 //            AvailableVehiclesData(
@@ -219,7 +219,7 @@ object LocalDataRepository {
             AvailableVehiclesData(
                 freightType = R.string.freight_type_7,
                 freightSub = R.string.freight_type_7 ,
-                freightImage = R.drawable.delivery_truck,
+                freightImage = R.drawable.road_freight,
             ),
         )
     }

@@ -7,13 +7,11 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.ayoolamasha.uidesignassignment.R
 import com.ayoolamasha.uidesignassignment.core.navigateToDashboardHolder
 import com.ayoolamasha.uidesignassignment.core.statusBarColor
 import com.ayoolamasha.uidesignassignment.databinding.FragmentShipmentBinding
-import com.ayoolamasha.uidesignassignment.databinding.ItemTabItemsBinding
 import com.ayoolamasha.uidesignassignment.presentation.adapter.ALL_FRAGMENT
 import com.ayoolamasha.uidesignassignment.presentation.adapter.CANCELLED_FRAGMENT
 import com.ayoolamasha.uidesignassignment.presentation.adapter.COMPLETED_FRAGMENT
@@ -68,33 +66,43 @@ class ShipmentFragment : Fragment() {
 
 
 
-        binding.actionTabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+        binding.actionTabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 //binding.actionTabs.animation = AnimationUtils.loadAnimation(context, R.anim.bounce_anim)
+                when (tab?.position) {
+                    1 -> {
+                        tabBadges(tabs = tab, badgeNumber = 5)
+                    }
+
+                    2 -> {
+                        tabBadges(tabs = tab, badgeNumber = 3)
+                    }
+
+                    3 -> {
+                        tabBadges(tabs = tab, badgeNumber = 4)
+                    }
+                }
                 val badge = tab?.orCreateBadge
                 if (badge != null) {
-                    badge.backgroundColor = ContextCompat.getColor(requireContext(), R.color.color_secondary)
+                    badge.backgroundColor =
+                        ContextCompat.getColor(requireContext(), R.color.color_secondary)
                 }
 
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                if (tab != null) {
-                    if (tab.position == 0){
-                        val badge = tab.orCreateBadge
-                        badge.backgroundColor = ContextCompat.getColor(requireContext(), R.color.color_primary_two)
-                    }
-                }
                 val badge = tab?.orCreateBadge
                 if (badge != null) {
-                    badge.backgroundColor = ContextCompat.getColor(requireContext(), R.color.color_primary_two)
+                    badge.backgroundColor =
+                        ContextCompat.getColor(requireContext(), R.color.color_primary_two)
                 }
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
                 val badge = tab?.orCreateBadge
                 if (badge != null) {
-                    badge.backgroundColor = ContextCompat.getColor(requireContext(), R.color.color_secondary)
+                    badge.backgroundColor =
+                        ContextCompat.getColor(requireContext(), R.color.color_secondary)
                 }
             }
 
@@ -112,19 +120,20 @@ class ShipmentFragment : Fragment() {
 
                 COMPLETED_FRAGMENT -> {
                     tabs.text = getString(R.string.completed)
-                    tabBadges(tabs = tabs, badgeNumber = 5)
+                    notSelectedTabBadges(tabs = tabs, badgeNumber = 5)
 
 
                 }
 
                 IN_PROGRESS_FRAGMENT -> {
                     tabs.text = getString(R.string.in_progress_c)
-                    tabBadges(tabs = tabs, badgeNumber = 3)
+                    notSelectedTabBadges(tabs = tabs, badgeNumber = 3)
+
                 }
 
                 PENDING_ORDERS_FRAGMENT -> {
                     tabs.text = getString(R.string.pending_orders)
-                    tabBadges(tabs = tabs, badgeNumber = 4)
+                    notSelectedTabBadges(tabs = tabs, badgeNumber = 4)
 
                 }
 
@@ -136,7 +145,15 @@ class ShipmentFragment : Fragment() {
         }.attach()
     }
 
-    private fun tabBadges(tabs: TabLayout.Tab, badgeNumber: Int){
+    private fun tabBadges(tabs: TabLayout.Tab, badgeNumber: Int) {
+        val badge = tabs.orCreateBadge
+        badge.number = badgeNumber
+        badge.bounds.left
+        badge.backgroundColor =
+            ContextCompat.getColor(requireContext(), R.color.color_secondary)
+    }
+
+    private fun notSelectedTabBadges(tabs: TabLayout.Tab, badgeNumber: Int) {
         val badge = tabs.orCreateBadge
         badge.number = badgeNumber
         badge.bounds.left
@@ -144,12 +161,6 @@ class ShipmentFragment : Fragment() {
             ContextCompat.getColor(requireContext(), R.color.color_primary_two)
     }
 
-
-    override fun onStart() {
-        super.onStart()
-        binding.shipmentLinear.animation =
-            AnimationUtils.loadAnimation(context, R.anim.slide_up_anim)
-    }
 
     override fun onResume() {
         super.onResume()

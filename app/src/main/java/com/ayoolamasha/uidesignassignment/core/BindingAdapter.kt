@@ -7,6 +7,7 @@ import androidx.annotation.StringRes
 import androidx.databinding.BindingAdapter
 import com.ayoolamasha.uidesignassignment.R
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 
 @BindingAdapter("app:loadImage")
@@ -15,6 +16,7 @@ fun loadImage(image: ImageView?, imageString: Int?) {
         Glide.with(image.context)
             .load(imageString)
             .apply(RequestOptions())
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .centerCrop()
             .into(image)
     }

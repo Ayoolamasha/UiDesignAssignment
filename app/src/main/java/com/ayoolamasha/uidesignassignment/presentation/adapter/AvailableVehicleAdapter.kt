@@ -2,9 +2,11 @@ package com.ayoolamasha.uidesignassignment.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.ayoolamasha.uidesignassignment.R
 import com.ayoolamasha.uidesignassignment.data.AvailableVehiclesData
 import com.ayoolamasha.uidesignassignment.databinding.ItemAvailableVehiclesRecyclerDesignBinding
 
@@ -21,6 +23,8 @@ class AvailableVehicleAdapter :
                 availableVehicles = items
                 executePendingBindings()
             }
+
+            binding.imageSlide.startAnimation(AnimationUtils.loadAnimation(binding.imageSlide.context, R.anim.slide_in_right_anim))
         }
 
 

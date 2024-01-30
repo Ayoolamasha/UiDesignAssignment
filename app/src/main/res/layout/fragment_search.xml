@@ -75,7 +75,7 @@
                             style="@style/SearchViewStyle"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="@dimen/height_35"
+                            android:layout_height="@dimen/height_30"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.03"

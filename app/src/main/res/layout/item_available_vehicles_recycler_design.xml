@@ -12,7 +12,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="@dimen/radius_10"
+        android:elevation="@dimen/width_0"
+        app:cardCornerRadius="@dimen/radius_5"
         app:cardBackgroundColor="@color/white"
         android:layout_marginTop="@dimen/margin_10"
         android:layout_marginBottom="@dimen/margin_10"
@@ -57,6 +58,7 @@
 
 
             <ImageView
+                android:id="@+id/imageSlide"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_100"
                 android:scaleType="fitXY"

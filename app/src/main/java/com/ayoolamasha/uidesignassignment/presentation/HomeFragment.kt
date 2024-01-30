@@ -43,6 +43,8 @@ class HomeFragment: Fragment() {
         statusBarColor()
         initRecycler()
         binding.contentConstraint.animation = AnimationUtils.loadAnimation(context, R.anim.slide_up_anim)
+        binding.driveSlide.animation = AnimationUtils.loadAnimation(context, R.anim.slide_in_right_anim)
+
 
 
 
@@ -63,26 +65,12 @@ class HomeFragment: Fragment() {
 
     }
 
-    private fun slideDownTabLayout() {
-        val tabLayoutHeight = binding.contentConstraint.height.toFloat()
-
-        val animator = ObjectAnimator.ofFloat(binding.contentConstraint, "translationY", 0f, tabLayoutHeight)
-
-        // Set the duration and start the animation
-        animator.duration = 20000
-        animator.start()
-    }
-
-
-    override fun onStart() {
-        super.onStart()
-        binding.contentConstraint.animation = AnimationUtils.loadAnimation(context, R.anim.slide_up_anim)
-
-    }
 
     override fun onResume() {
         super.onResume()
         binding.contentConstraint.animation = AnimationUtils.loadAnimation(context, R.anim.slide_up_anim)
+        binding.driveSlide.animation = AnimationUtils.loadAnimation(context, R.anim.slide_in_left_anim)
+
     }
 
 

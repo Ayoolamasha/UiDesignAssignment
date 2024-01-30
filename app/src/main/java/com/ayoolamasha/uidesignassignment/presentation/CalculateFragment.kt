@@ -1,12 +1,15 @@
 package com.ayoolamasha.uidesignassignment.presentation
 
 import android.animation.ObjectAnimator
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -15,6 +18,7 @@ import com.ayoolamasha.uidesignassignment.core.bounceAnimation
 import com.ayoolamasha.uidesignassignment.core.navigateToDashboardHolder
 import com.ayoolamasha.uidesignassignment.core.statusBarColor
 import com.ayoolamasha.uidesignassignment.databinding.FragmentCalaulateBinding
+import com.google.android.material.chip.ChipGroup
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -47,6 +51,7 @@ class CalculateFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         statusBarColor()
         binding.contentConstraint.animation = AnimationUtils.loadAnimation(context, R.anim.slide_up_anim)
+        binding.topInfoDash.animation = AnimationUtils.loadAnimation(context, R.anim.slide_down_anim)
 
         binding.backArrow.setOnClickListener { navigateToDashboardHolder() }
 
@@ -56,21 +61,14 @@ class CalculateFragment : Fragment() {
                 delay(500)
                 findNavController().navigate(R.id.action_homeFragment_to_resultFragment)
             }
-
         }
+
 
     }
 
     private fun slideDownTabLayout() {
-//
-
-
         val fadeInAnimator = ObjectAnimator.ofFloat(binding.calculatorText, "alpha", 0f, 1f)
-
-        // Set the duration of the animation in milliseconds
         fadeInAnimator.duration = 1000
-
-        // Start the animation
         fadeInAnimator.start()
     }
 
@@ -78,11 +76,5 @@ class CalculateFragment : Fragment() {
         super.onResume()
         slideDownTabLayout()
         binding.contentConstraint.animation = AnimationUtils.loadAnimation(context, R.anim.slide_up_anim)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        binding.contentConstraint.animation = AnimationUtils.loadAnimation(context, R.anim.slide_up_anim)
-
     }
 }

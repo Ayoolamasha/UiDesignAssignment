@@ -32,13 +32,14 @@
                     app:layout_constraintBottom_toBottomOf="parent">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/topInfoDash"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_20"
-                        android:layout_marginBottom="@dimen/margin_20">
+                        android:layout_marginBottom="@dimen/margin_20"
+                        android:background="@color/color_primary">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/topInfoDash"
                             android:layout_width="@dimen/width_0"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
@@ -444,33 +445,39 @@
                         app:layout_constraintBottom_toBottomOf="parent">
 
                         <com.google.android.material.chip.Chip
+                            android:id="@+id/documentChip"
                             style="@style/Theme.ChipStyle"
                             android:text="@string/documents"
-                            android:background="@drawable/sqaure_chip_background"
+
                             />
 
                         <com.google.android.material.chip.Chip
+                            android:id="@+id/glassChip"
                             style="@style/Theme.ChipStyle"
-                            android:text="@string/glass"
-                            android:background="@drawable/sqaure_chip_background"/>
+                            android:text="@string/glass" />
 
                         <com.google.android.material.chip.Chip
+                            android:id="@+id/liquidChip"
                             style="@style/Theme.ChipStyle"
                             android:text="@string/liquid"/>
 
                         <com.google.android.material.chip.Chip
+                            android:id="@+id/foodChip"
                             style="@style/Theme.ChipStyle"
                             android:text="@string/food"/>
 
                         <com.google.android.material.chip.Chip
+                            android:id="@+id/electronicChip"
                             style="@style/Theme.ChipStyle"
                             android:text="@string/electronic"/>
 
                         <com.google.android.material.chip.Chip
+                            android:id="@+id/productChip"
                             style="@style/Theme.ChipStyle"
                             android:text="@string/product"/>
 
                         <com.google.android.material.chip.Chip
+                            android:id="@+id/othersChip"
                             style="@style/Theme.ChipStyle"
                             android:text="@string/other"/>
 
