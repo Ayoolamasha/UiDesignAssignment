@@ -24,17 +24,17 @@ fun loadImage(image: ImageView?, imageString: Int?) {
 fun shipmentStatus(textView: TextView, text: Int){
     when(text){
         R.string.in_progress ->{
-            textView.text = text.toString()
+            textView.setText(text)
             textView.setTextColor(Color.parseColor("#8fddba"))
         }
 
         R.string.pending ->{
-            textView.text = text.toString()
+            textView.setText(text)
             textView.setTextColor(Color.parseColor("#efc7a4"))
         }
 
         R.string.loading ->{
-            textView.text = text.toString()
+            textView.setText(text)
             textView.setTextColor(Color.parseColor("#b4dafb"))
         }
     }

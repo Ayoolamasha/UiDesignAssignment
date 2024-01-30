@@ -2,9 +2,12 @@ package com.ayoolamasha.uidesignassignment.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.ayoolamasha.uidesignassignment.R
 import com.ayoolamasha.uidesignassignment.data.ShipmentData
 import com.ayoolamasha.uidesignassignment.databinding.ItemShipmentRecyclerDesignBinding
 
@@ -19,6 +22,8 @@ class ShipmentHistoryAdapter :
                 shipmentDetails = items
                 executePendingBindings()
             }
+
+            binding.recyclerCardHolder.startAnimation(AnimationUtils.loadAnimation(binding.recyclerCardHolder.context, R.anim.slide_up_anim))
         }
 
 

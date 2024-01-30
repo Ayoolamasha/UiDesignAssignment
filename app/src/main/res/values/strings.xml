@@ -27,6 +27,7 @@
     <string name="arriving_today_details">Your delivery, #NEJ20089934122231 from Atlanta, is arriving today!</string>
     <string name="calculate">Calculate</string>
     <string name="shipment">Shipment</string>
+    <string name="shipments">Shipments</string>
     <string name="destination">Destination</string>
     <string name="packaging">Packaging</string>
     <string name="packaging_sub">What are you sending?</string>
@@ -40,10 +41,13 @@
     <string name="electronic">Electronic</string>
     <string name="product">Product</string>
     <string name="other">Others</string>
-    <string name="fourteen_usd">\u002491400 USD</string>
-    <string name="six_fifty_usd">\u00249650 USD</string>
-    <string name="two_thirty_usd">\u00249230 USD</string>
-    <string name="three_seventy_usd">\u00249370 USD</string>
+    <string name="zero">0</string>
+    <string name="usd_symbol">\u0024</string>
+    <string name="usd">USD</string>
+    <string name="fourteen_usd">\u00241400 USD</string>
+    <string name="six_fifty_usd">\u0024650 USD</string>
+    <string name="two_thirty_usd">\u0024230 USD</string>
+    <string name="three_seventy_usd">\u0024370 USD</string>
     <string name="shipment_date">Sep 20, 2023</string>
     <string name="search_item_title_1">Macbook pro M2</string>
     <string name="search_item_tracking_number_1">#NEJ20089934122231</string>
@@ -79,4 +83,14 @@
     <string name="freight_sub_6">Local</string>
     <string name="freight_type_7">Road freight</string>
     <string name="freight_sub_7">Local</string>
+    <string name="total_estimated_amount">Total Estimated Amount</string>
+    <string name="total_estimated_amount_sub">This amount is estimated this will vary\nif you change your location or weight</string>
+    <string name="back_home">Back to home</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="all">All</string>
+    <string name="completed">Completed</string>
+    <string name="in_progress_c">In progress</string>
+    <string name="pending_orders">Pending Order</string>
+    <string name="cancelled">Cancelled</string>
 </resources>

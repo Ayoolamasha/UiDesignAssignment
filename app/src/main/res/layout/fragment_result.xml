@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="estimatedCounter"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_background">
+
+        <LinearLayout
+            android:id="@+id/constraint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_two"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_100"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/packageLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/box_shadow_two"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_20"
+                app:layout_constraintVertical_bias="0.2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@id/logo"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/totalEstimate"
+                style="@style/Widget.TextView.BodyRegular16"
+                android:textSize="@dimen/subtitle_text_size_18"
+                android:textColor="@color/body_text_color_two"
+                android:text="@string/total_estimated_amount"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_20"
+                app:layout_constraintVertical_bias="0.15"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@id/packageLogo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_20">
+
+                <TextView
+                    style="@style/Widget.TextView.BodyRegular14"
+                    android:textSize="@dimen/title_text_size_20"
+                    android:text= "@string/usd_symbol"
+                    android:textColor="@color/green"
+                    />
+                <TextView
+                    android:id="@+id/estimatedAmount"
+                    style="@style/Widget.TextView.BodyRegular14"
+                    android:textSize="@dimen/title_text_size_20"
+                    android:text="@string/zero"
+                    android:textColor="@color/green"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    style="@style/Widget.TextView.BodyRegular14"
+                    android:textSize="@dimen/title_text_size_20"
+                    android:text= "@string/usd"
+                    android:textColor="@color/green"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+            <TextView
+                android:id="@+id/totalEstimateSub"
+                style="@style/Widget.TextView.BodyRegular14"
+                android:text="@string/total_estimated_amount_sub"
+                app:layout_constraintVertical_bias="0.03"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_20"
+                app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@id/estimatedAmount"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+            <Button
+                android:id="@+id/homeButton"
+                style="@style/Widget.Button.Main"
+                android:layout_width="match_parent"
+                android:text="@string/back_home"
+                app:layout_constraintVertical_bias="0.03"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:backgroundTint="@color/color_secondary"
+                app:layout_constraintStart_toEndOf="@id/guidelineStart"
+                app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                app:layout_constraintTop_toBottomOf="@id/totalEstimateSub"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+
+        <!--- MAIN GUIDELINE -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@integer/guidelineStart" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@integer/guidelineEnd" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

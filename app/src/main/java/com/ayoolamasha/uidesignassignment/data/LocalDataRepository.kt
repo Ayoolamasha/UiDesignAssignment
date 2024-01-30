@@ -210,11 +210,11 @@ object LocalDataRepository {
                 freightImage = R.drawable.delivery_truck,
             ),
 
-            AvailableVehiclesData(
-                freightType = R.string.freight_type_6,
-                freightSub = R.string.freight_type_6 ,
-                freightImage = R.drawable.delivery_truck,
-            ),
+//            AvailableVehiclesData(
+//                freightType = R.string.freight_type_6,
+//                freightSub = R.string.freight_type_6 ,
+//                freightImage = R.drawable.delivery_truck,
+//            ),
 
             AvailableVehiclesData(
                 freightType = R.string.freight_type_7,

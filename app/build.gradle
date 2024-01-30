@@ -52,6 +52,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+    // required to avoid crash on Android 12 API 31
+    implementation 'androidx.work:work-runtime-ktx:2.8.1'
 
     //NAVIGATION/PAGING
     implementation "androidx.navigation:navigation-fragment-ktx:2.7.1"
@@ -63,6 +66,7 @@ dependencies {
 
     //Multidex
     implementation 'androidx.multidex:multidex:2.0.1'
+
 
 
     testImplementation 'junit:junit:4.13.2'

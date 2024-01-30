@@ -2,11 +2,13 @@ package com.ayoolamasha.uidesignassignment.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.ayoolamasha.uidesignassignment.R
 import com.ayoolamasha.uidesignassignment.data.SearchData
 import com.ayoolamasha.uidesignassignment.databinding.ItemSearchItemsRecyclerDesignBinding
 
@@ -26,6 +28,8 @@ class SearchDataAdapter : ListAdapter<SearchData, SearchDataAdapter.SearchViewHo
                 searchItems = items
                 executePendingBindings()
             }
+
+            binding.recyclerCardHolder.startAnimation(AnimationUtils.loadAnimation(binding.recyclerCardHolder.context, R.anim.slide_up_anim))
         }
 
 

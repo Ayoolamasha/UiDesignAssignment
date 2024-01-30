@@ -7,7 +7,25 @@
 
     <fragment
         android:id="@+id/homeFragment"
+        android:name="com.ayoolamasha.uidesignassignment.presentation.DashboardViewPagerHolder"
+        android:label="DashboardViewHolder"
+        tools:layout="@layout/fragment_dashboard_holder">
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
         android:name="com.ayoolamasha.uidesignassignment.presentation.SearchFragment"
-        android:label="HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search"/>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.ayoolamasha.uidesignassignment.presentation.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_result"/>
 </navigation>

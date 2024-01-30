@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootConstraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white_background">
@@ -31,6 +32,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:weightSum="2"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_10"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/guidelineAppBarEnd"
                     app:layout_constraintStart_toEndOf="@id/guidelineAppBarStart"
@@ -39,8 +42,12 @@
 
                     <ImageView
                         android:id="@+id/backArrow"
-                        android:layout_width="@dimen/width_30"
-                        android:layout_height="@dimen/height_30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/padding_10"
+                        android:paddingBottom="@dimen/padding_10"
+                        android:paddingEnd="@dimen/padding_10"
+                        android:paddingStart="@dimen/width_0"
                         app:layout_constraintHorizontal_bias="0.0"
                         android:src="@drawable/arrow_back"
                         app:layout_constraintStart_toStartOf="parent"
@@ -61,34 +68,19 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent">
 
-                        <ImageView
-                            android:id="@+id/searchIcon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/search_icon"
-                            android:layout_gravity="center_vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@id/guidelineStarBarAppBarImageEnd"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@id/guidelineStarBarAppBarImageStart"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.5" />
 
 
-                        <EditText
+                        <androidx.appcompat.widget.SearchView
                             android:id="@+id/searchText"
-                            android:layout_width="0dp"
-                            style="@style/Widget.EditText.SearchText"
+                            style="@style/SearchViewStyle"
                             android:layout_weight="1"
-                            android:layout_gravity="center_vertical"
-                            android:hint="@string/enter_receipt_number"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/height_35"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.03"
-                            app:layout_constraintStart_toEndOf="@id/guidelineStarBarAppBarImageEnd"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.5"
-                            />
+                            app:layout_constraintVertical_bias="0.5" />
 
 
                         <LinearLayout
@@ -179,7 +171,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/destinationCard"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/height_300"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="@dimen/radius_10"
             android:layout_marginTop="@dimen/margin_20"
